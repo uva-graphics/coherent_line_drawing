@@ -8,4 +8,6 @@ The project website for that paper is here:
 
 Install OpenCV and compile with:
 
+```
 g++ *.cpp -o main `pkg-config --libs opencv`
+```
