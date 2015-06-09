@@ -1,5 +1,10 @@
 
 // Coherence Line Drawing standalone executable
+//
+// Source code, modified from the paper 'Coherent Line Drawing' by Kang et al, Proc. NPAR 2007,
+//   to be a standalone program. The project website for that paper is here:
+//   http://cg.postech.ac.kr/research/coherent_line/
+//
 // Install OpenCV and compile with: g++ *.cpp -o main `pkg-config --libs opencv`
 
 #include "opencv2/opencv.hpp"
@@ -11,8 +16,8 @@
 
 using cv::Mat;
 
-// From: https://github.com/kylemcdonald/ofxCv/blob/master/libs/ofxCv/include/ofxCv/Wrappers.h
-// and the CLD paper website: http://cg.postech.ac.kr/research/coherent_line/
+// Code from: https://github.com/kylemcdonald/ofxCv/blob/master/libs/ofxCv/include/ofxCv/Wrappers.h
+// and the paper website: http://cg.postech.ac.kr/research/coherent_line/
 //
 // coherent line drawing: good values for halfw are between 1 and 8,
 // smoothPasses 1, and 4, sigma1 between .01 and 2, sigma2 between .01 and 10,
@@ -49,7 +54,7 @@ int main(int argc, char *argv[]) {
     argc--;
     argv++;
     if (argc < 2) {
-        fprintf(stderr, "main in.png out.png\n"); exit(1);
+        fprintf(stderr, "main in.png out.png"); exit(1);
     }
     Mat image;
     image = cv::imread(argv[0], CV_LOAD_IMAGE_GRAYSCALE);
