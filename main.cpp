@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     argc--;
     argv++;
     if (argc < 2) {
-        fprintf(stderr, "main in.png out.png"); exit(1);
+        fprintf(stderr, "main in.png out.png\n"); exit(1);
     }
     Mat image;
     image = cv::imread(argv[0], CV_LOAD_IMAGE_GRAYSCALE);
